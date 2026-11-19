@@ -1,0 +1,93 @@
+version: 2
+
+models:
+  # ---------- staging ----------
+  - name: stg_sales
+    columns:
+      - name: order_id
+        data_tests: [unique, not_null]
+      - name: order_date
+        data_tests: [not_null]
+      - name: unit_price
+        data_tests: [not_null]
+      - name: payment_mode
+        data_tests:
+          - accepted_values:
+              values: ['UPI', 'Credit Card', 'Debit Card', 'Cash', 'Net Banking']
+      - name: order_status
+        data_tests:
+          - accepted_values:
+              values: ['Delivered', 'Cancelled', 'Returned']
+      - name: customer_id
+        data_tests:
+          - relationships:
+              to: ref('stg_customers')
+              field: customer_id
+              config:
+                severity: warn
+
+  - name: stg_customers
+    columns:
+      - name: customer_id
+        data_tests: [unique, not_null]
+      - name: segment
+        data_tests:
+          - accepted_values:
+              values: ['Consumer', 'Corporate', 'Small Business']
+
+  - name: stg_products
+    columns:
+      - name: product_code
+        data_tests: [unique, not_null]
+      - name: category
+        data_tests:
+          - accepted_values:
+              values: ['Mobiles', 'Laptops', 'Televisions',
+                       'Audio', 'Accessories', 'Home Appliances']
+
+  - name: stg_stores
+    columns:
+      - name: store_code
+        data_tests: [unique, not_null]
+      - name: region
+        data_tests:
+          - accepted_values:
+              values: ['North', 'South', 'East', 'West', 'All India']
+
+  # ---------- marts ----------
+  - name: dim_customers
+    columns:
+      - name: customer_id
+        data_tests: [unique, not_null]
+
+  - name: dim_date
+    columns:
+      - name: date_day
+        data_tests: [unique, not_null]
+
+  - name: fct_sales
+    columns:
+      - name: order_id
+        data_tests: [unique, not_null]
+      - name: net_amount
+        data_tests: [not_null]
+      - name: customer_id
+        data_tests:
+          - relationships:
+              to: ref('dim_customers')
+              field: customer_id
+      - name: product_code
+        data_tests:
+          - relationships:
+              to: ref('dim_products')
+              field: product_code
+      - name: store_code
+        data_tests:
+          - relationships:
+              to: ref('dim_stores')
+              field: store_code
+      - name: order_date
+        data_tests:
+          - relationships:
+              to: ref('dim_date')
+              field: date_day

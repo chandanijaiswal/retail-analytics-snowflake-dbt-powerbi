@@ -1,0 +1,13 @@
+version: 2
+
+sources:
+  - name: raw
+    description: "Messy data loaded from the CSV files"
+    database: DBT_DEMO_DB
+    schema: RAW
+    tables:
+      - name: raw_sales
+      - name: raw_customers
+      - name: raw_products
+      - name: raw_stores
+

@@ -1,0 +1,13 @@
+﻿store_code,store_name,city,state,region,store_type,open_date
+"ST01 ","mumbai mall store","Bombay","Maharashtra","West","MALL ","2018-12-05"
+"ST02","pune high street store","Pune","Maharashtra","West","high street","2022-06-30"
+"ST03 ","DELHI MALL STORE","Delhi","Delhi","north","Mall","2023-09-21"
+"ST04","GURUGRAM MALL STORE","Gurugram","HR","North","mall","2021-12-22"
+"st05","jaipur high street store","Jaipur","RJ","N","High Street","2019-04-21"
+"ST06 ","Bengaluru Mall Store","bengaluru ","KARNATAKA","SOUTH ","Shopping Mall","20/08/2021"
+"st07","CHENNAI HIGH STREET STORE","chennai","tamil nadu","south","High St.","18-Sep-2021"
+"ST08 ","  Hyderabad Mall Store","Hyderabad","TS","south","MALL ","18/01/2022"
+"ST09 ","  Kochi High Street Store","Cochin"," Kerala ","south","HIGH ST","2018-01-02"
+"ST10","KOLKATA MALL STORE","KOLKATA "," West Bengal ","East","mall","2023-09-01"
+"ST11","bhubaneswar high street store","bhubaneswar","OD","East","High Street","12-Sep-2019"
+"ST12 ","ONLINE STORE","Online","All India","all india","online","04/09/2020"
