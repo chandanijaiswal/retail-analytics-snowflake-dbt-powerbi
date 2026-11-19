@@ -2,7 +2,8 @@
 
 An end-to-end ELT pipeline that turns four messy CSV files from a multi-city electronics retail chain in India (2025) into a clean star schema and an interactive Power BI dashboard.
 
-![Dashboard](screenshots/dashboard.png)
+<img width="1351" height="768" alt="Dashboard" src="https://github.com/user-attachments/assets/801a6b50-0bb3-41b4-8bd6-5a82dea31839" />
+
 
 ## Business problem
 
@@ -22,7 +23,8 @@ The business sends raw sales, customer, product and store files with more than 2
 | Marts (5 tables) | `DBT_DEMO_DB.RETAIL` | `fct_sales` + `dim_customers`, `dim_products`, `dim_stores`, `dim_date` |
 | Power BI | Desktop | Relationships, DAX measures, dashboard |
 
-![dbt DAG](screenshots/dag.png)
+<img width="1472" height="760" alt="DAG " src="https://github.com/user-attachments/assets/2104c6fd-81bd-4d6d-bfe2-d3e03d2213b1" />
+
 
 ## Tech stack
 
@@ -46,7 +48,8 @@ Snowflake, dbt (1.9), SQL, Power BI Desktop, DAX, GitHub
 
 ## Data model (star schema)
 
-![Star schema](screenshots/star_schema.png)
+<img width="1298" height="707" alt="star_schema" src="https://github.com/user-attachments/assets/80974c59-699f-4d37-8f55-a952748ab3dd" />
+
 
 - `fct_sales`: one row per valid order (gross amount, net amount, profit)
 - `dim_customers`, `dim_products`, `dim_stores`, `dim_date`
@@ -100,4 +103,4 @@ Total Orders, Delivered Orders, Net Revenue, Total Profit, Units Sold, Avg Order
 
 ## Author
 
-**Chandani Jaiswal**: [LinkedIn](https://www.linkedin.com/in/YOUR-PROFILE) | [GitHub](https://github.com/YOUR-USERNAME)
+**Chandani Jaiswal**
